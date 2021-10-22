@@ -4,7 +4,7 @@ node_js:
 
 branches:
   only:
-  - main
+  - master
 
 cache:
   directories:
@@ -18,11 +18,10 @@ script:
   #- yarn lint
   - yarn build
   - mv build/index.html build/404.html
-
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
   local_dir: build
   on:
-    branch: main
+    branch: master
